@@ -1,0 +1,11 @@
+.btn {
+  background: #D80033;
+  color: white;
+  border: 0px;
+  outline: none;
+  padding: 15px 45px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Lato';
+  font-size: 12pt;
+}
