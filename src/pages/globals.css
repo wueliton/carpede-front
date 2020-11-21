@@ -38,8 +38,38 @@ section {
 
 .yourApp {
   min-height: 100vh;
+  margin-top: 80px;
+}
+.yourApp div[class*='col'] {
   display: flex;
   align-items: center;
+}
+.yourApp img {
+  max-width: 100%;
+}
+.mobile {
+  position: relative;
+}
+.mobile .screen {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+.mobile .screen {
+  width: 81%;
+  margin-left: -4%;
+  margin-top: -3%;
+  max-height: 100%;
+  overflow: hidden;
+}
+.mobile .screen * {
+  outline: none;
+}
+.screen .slick-list .slick-track {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
 }
 h1, h2 {
   font-size: 52pt;
@@ -62,15 +92,43 @@ h1, h2 {
   margin-bottom: 30px;
 }
 
-.cards div[class*='col'] div {
+.cards div[class*='col']>div {
   border: 1px solid #EEE;
   border-radius: 7px;
   padding: 25px;
   height: 100%;
+  align-items: center;
+}
+
+.cards img {
+  filter: grayscale(10);
+  opacity: 0.5;
+}
+
+.cards .row {
+  margin: 0px;
+}
+
+.cards div[class*='col']>div,.cards div[class*='col']>div * {
+  transition: all 0.5s;
+}
+
+.cards div[class*='col']>div:hover {
+  box-shadow: 0px 11px 28px -7px rgba(0,0,0,0.2);
+}
+
+.cards div[class*='col']>div:hover img {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+.cards div[class*='col']>div:hover h3 {
+  color: #D80033;
 }
 
 .cards div[class*='col'] h3 {
   margin-top: 0px;
+  margin-bottom: 10px;
   font-size: 20pt;
 }
 

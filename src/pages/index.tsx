@@ -1,7 +1,18 @@
 import React from 'react';
+import Carousel from 'react-slick';
 import { Head, Button } from '../components';
 
 const Home = (): JSX.Element => {
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 1000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    arrows: false,
+  };
+
   return (
     <>
       <Head
@@ -12,15 +23,44 @@ const Home = (): JSX.Element => {
       <section className="container yourApp">
         <div className="row">
           <div className="col-md-8">
-            <h1>
-              seu aplicativo de delivery com a sua
-              <span> marca</span>
-            </h1>
-            <h3>
-              Tenha a sua própria plataforma de pedidos, sem concorrência, sem
-              taxas por pedido e a identidade de sua Empresa.
-            </h3>
-            <Button text="Começar agora" />
+            <div>
+              <h1>
+                seu aplicativo de delivery com a sua
+                <span> marca</span>
+              </h1>
+              <h3>
+                Tenha a sua própria plataforma de pedidos, sem concorrência, sem
+                taxas por pedido e a identidade de sua Empresa.
+              </h3>
+              <Button text="Começar agora" />
+            </div>
+          </div>
+          <div className="col-md-4">
+            <div className="mobile">
+              <img src="./images/phone.jpg" alt="Celular" />
+              <span className="screen">
+                <Carousel {...settings}>
+                  <div>
+                    <img src="./images/screen1.jpeg" alt="Screen 1" />
+                  </div>
+                  <div>
+                    <img src="./images/screen2.jpg" alt="Screen 1" />
+                  </div>
+                  <div>
+                    <img src="./images/screen3.jpg" alt="Screen 1" />
+                  </div>
+                  <div>
+                    <img src="./images/screen4.jpg" alt="Screen 1" />
+                  </div>
+                  <div>
+                    <img src="./images/screen5.jpg" alt="Screen 1" />
+                  </div>
+                  <div>
+                    <img src="./images/screen6.jpg" alt="Screen 1" />
+                  </div>
+                </Carousel>
+              </span>
+            </div>
           </div>
         </div>
       </section>
@@ -45,6 +85,14 @@ const Home = (): JSX.Element => {
           <div className="col-md-6 calculate">
             <div className="goCalc">
               <p>Qual valor aproximado mensal de pedidos em aplicativos?</p>
+              <input type="range" />
+              <p>Qual aplicativo sua empresa utiliza?</p>
+              <div className="row">
+                <div className="col-md-4">Ifood</div>
+                <div className="col-md-4">Rappi</div>
+                <div className="col-md-4">Uber Eats</div>
+              </div>
+              <Button text="Calcular" />
             </div>
           </div>
         </div>
@@ -64,31 +112,64 @@ const Home = (): JSX.Element => {
         </div>
         <div className="row cards">
           <div className="col-md-6">
-            <div>
-              <h3>Sem taxa de comissionamento</h3>
-              <p>
-                Você paga somente a assinatura mensal, e nada mais além disso.*
-              </p>
+            <div className="row">
+              <div className="col-auto">
+                <img
+                  src="./images/grafico-de-linha.png"
+                  alt="Sem taxa de comissionamento"
+                />
+              </div>
+              <div className="col">
+                <h3>Sem taxa de comissionamento</h3>
+                <p>
+                  Você paga somente a assinatura mensal, e nada mais além
+                  disso.*
+                </p>
+              </div>
             </div>
           </div>
           <div className="col-md-6">
-            <div>
-              <h3>Sem tempo mínimo de adesão</h3>
-              <p>O cancelamento pode ser realizado a qualquer momento.</p>
+            <div className="row">
+              <div className="col-auto">
+                <img
+                  src="./images/relogio.png"
+                  alt="Sem tempo mínimo de adesão"
+                />
+              </div>
+              <div className="col">
+                <h3>Sem tempo mínimo de adesão</h3>
+                <p>O cancelamento pode ser realizado a qualquer momento.</p>
+              </div>
             </div>
           </div>
           <div className="col-md-6">
-            <div>
-              <h3>Aplicativo personalizado</h3>
-              <p>
-                O aplicativo de sua Empresa será desenvolvido com a sua Marca.
-              </p>
+            <div className="row">
+              <div className="col-auto">
+                <img
+                  src="./images/estrela.png"
+                  alt="Aplicativo personalizado"
+                />
+              </div>
+              <div className="col">
+                <h3>Aplicativo personalizado</h3>
+                <p>
+                  O aplicativo de sua Empresa será desenvolvido com a sua Marca.
+                </p>
+              </div>
             </div>
           </div>
           <div className="col-md-6">
-            <div>
-              <h3>Suporte exclusivo</h3>
-              <p>O cancelamento pode ser realizado a qualquer momento.</p>
+            <div className="row">
+              <div className="col-auto">
+                <img src="./images/atendimento.png" alt="Suporte exclusivo" />
+              </div>
+              <div className="col">
+                <h3>Suporte exclusivo</h3>
+                <p>
+                  Atendimento personalizado, com todo o suporte para começar a
+                  usar em seu negócio.
+                </p>
+              </div>
             </div>
           </div>
         </div>
